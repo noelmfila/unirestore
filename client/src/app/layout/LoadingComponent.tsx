@@ -1,9 +1,7 @@
 import { Backdrop, Box, CircularProgress, Typography } from "@mui/material";
-interface Props {
-  message?: string;
-}
+import { IMessage } from "../interface/message";
 
-const LoadingComponent = ({ message = "Loading..." }: Props) => {
+const LoadingComponent = ({ message = "Loading..." }: IMessage) => {
   return (
     <Backdrop open={true} invisible={true}>
       <Box
