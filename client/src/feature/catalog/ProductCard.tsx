@@ -14,6 +14,7 @@ import { useState } from "react";
 import agent from "../../app/api/agent";
 import { LoadingButton } from "@mui/lab";
 import { useStoreContext } from "../../app/context/StoreContext";
+import { currencyFormatter } from "../../app/utilities/currencyFormatter";
 
 export const ProductCard = ({ product }: IProduct) => {
   const [loading, setLoading] = useState(false);
@@ -51,7 +52,7 @@ export const ProductCard = ({ product }: IProduct) => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5">
-          R{(product.price / 100).toFixed(2)}
+          {currencyFormatter(product.price)}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {product.brand}/{product.type}
