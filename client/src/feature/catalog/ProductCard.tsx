@@ -53,7 +53,7 @@ export const ProductCard = ({ product }: IProduct) => {
         <LoadingButton
           loading={status.includes("pendingAddItem" + product.id)}
           onClick={() =>
-            dispatch(addBasketItemAsync({ productId: product.id }))
+            dispatch(addBasketItemAsync({ productId: product.id, quantity: 1 }))
           }
           size="small"
         >
